@@ -3,149 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demo Git</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Simple Contact form</title>
 </head>
-<style>
-
-* {
-    padding: 0;
-    margin: 0;
-}
-
-
-body {
-    width: 100%;
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-}
-
-form {
-    background-color: #ffffff;
-    
-    padding: 2rem 1rem;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    width: clamp(300px, 50%, 15vmin);
-    margin: 5rem auto;
-}
-
-.title {
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-
-label {
-    margin: 0 auto .05rem;
-    /* display: block; */
-    color: #333333;
-}
-
-input[type="text"],
-input[type="email"],
-textarea {
-    width: 90%;
-    padding: .4rem .5rem;
-    margin: 0 auto 1rem;
-    border: 1px solid #cccccc;
-    border-radius: 4px;
-}
-
-input[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 2vmax;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin: 0 auto 1rem;
-}
-
-input[type="submit"]:hover {
-    background-color: #45a049;
-}
-
-
-#see-more {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#hide-panel {
-    padding: 1rem 2rem;
-    border-radius: 5px;
-    border: 1px solid #000;
-    background-color: #000;
-    color: #fff;
-    cursor: pointer;
-    transition: all .8s ease-in-out;
-}
-
-.active:enabled , #hide-panel:hover {
-    background-color: #303030;
-    
-}
-
-.panel {
-    display: none;
-    color: gray;
-    padding: 0 5vmin;
-    margin: 2rem auto 0;
-    text-align: justify;
-}
-</style>
 <body>
-<form action="/submit-contact-form" method="POST">
-    <div title="Contact Form" class="title">
-        <h2>
-            Want to get in touch?
-        </h2>
-    </div>
-    <label for="name">Name:</label><br>
-    <input type="text" id="name" name="name" required><br>
-    <label for="email">Email:</label><br>
-    <input type="email" id="email" name="email" required><br>
-    <label for="message">Message:</label><br>
-    <textarea id="message" name="message" rows="4" required></textarea><br>
-    <input type="submit" value="Submit">
+    <section class="container">
+        <form action="/submit-contact-form" method="POST">
+            <div title="Contact Form" class="title">
+                <h2>
+                    Want to get in touch?
+                </h2>
+            </div>
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" placeholder="What do you want me to call you?" required><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" placeholder="Where can I reach you?" required><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" placeholder="What do you want to tell me?" required></textarea><br>
+            <input type="submit" value="Submit">
+        
+        </form>
+        <div id="see-more" >
+            <button id="hide-panel" class="active">About</button>
+            <p class="panel">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis sequi beatae illum unde aperiam alias eius voluptas distinctio ducimus velit, labore voluptate blanditiis magni, sint perspiciatis maiores, cupiditate consequuntur quidem explicabo. Sit mollitia doloremque omnis, cumque assumenda iusto dolor rem iure ratione dolorum similique? Consequuntur animi adipisci amet quos eos aperiam nulla, quo unde, nihil dolorum eligendi mollitia, quasi tempora delectus est veniam suscipit laborum perspiciatis. Voluptatem iure esse at possimus vero aperiam tempore temporibus omnis quisquam. Magni suscipit assumenda impedit excepturi, nulla consequuntur temporibus tempore aut voluptatibus. Quod, corrupti temporibus? Doloremque esse quidem delectus qui numquam perspiciatis dignissimos repudiandae?
+            </p>
+        </div>
+    </section>
 
 
-    
-
-    
-
-</form>
-<div id="see-more" >
-    <h4>
-        About Me
-    </h4>
-    <button id="hide-panel" class="active">See More</button>
-    <p class="panel">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis sequi beatae illum unde aperiam alias eius voluptas distinctio ducimus velit, labore voluptate blanditiis magni, sint perspiciatis maiores, cupiditate consequuntur quidem explicabo. Sit mollitia doloremque omnis, cumque assumenda iusto dolor rem iure ratione dolorum similique? Consequuntur animi adipisci amet quos eos aperiam nulla, quo unde, nihil dolorum eligendi mollitia, quasi tempora delectus est veniam suscipit laborum perspiciatis. Voluptatem iure esse at possimus vero aperiam tempore temporibus omnis quisquam. Magni suscipit assumenda impedit excepturi, nulla consequuntur temporibus tempore aut voluptatibus. Quod, corrupti temporibus? Doloremque esse quidem delectus qui numquam perspiciatis dignissimos repudiandae?
-    </p>
-</div>
-
-<script>
-    
-
-    var button = document.getElementById('hide-panel');
-    var panel = document.querySelector('#see-more .panel');
-
-    button.addEventListener('click', function() {
-        if (panel.style.display === 'block') {
-            panel.style.display = 'none';
-            button.textContent = 'See More';
-        } else {
-            panel.style.display = 'block';
-            button.textContent = 'See Less';
-        }
-    });
+<script src="function.js">
 </script>
 </body>
 </html>
