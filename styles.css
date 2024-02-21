@@ -1,141 +1,170 @@
+/* Global reset for padding, margin, and font */
 * {
     padding: 0;
     margin: 0;
     font-family: Arial, sans-serif;
-
 }
 
-
+/* Body styling */
 body {
     width: 100%;
     background-color: #f0f0f0;
 }
 
+/* Fullscreen video background styling */
+.video-background {
+    position: fixed; 
+    right: 0;
+    bottom: 0;
+    max-width: 100%; 
+    min-height: 100%;
+    z-index: -100; 
+    object-fit: cover;
+    filter: blur(10px); /* Blur effect for the video */
+}
+
+/* Container styling for layout */
 .container {
-    padding: 0 auto;
+    position: relative; 
+    z-index: 1;
     margin: 0 auto;
     width: 100%;
-    /* align-items: center;
-    justify-content: center; */
-    gap: 1rem;
+    gap: 1rem; /* Space between elements */
 }
 
+/* Form styling */
 form {
     background-color: #ffffff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    border-radius: 8px;
-
-
-    margin: 5rem auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.6); /* Shadow for depth */
+    border-radius: 8px; /* Rounded corners */
+    margin: 5rem auto; /* Centering */
     padding: 2rem 2rem;
-
-    width: clamp(300px, 90vw, 30%);
+    width: clamp(300px, 90vw, 30%); /* Responsive width */
 }
 
+/* Title styling */
 .title {
     margin-bottom: 2rem;
     text-align: center;
 }
 
-
+/* Label styling */
 label {
-    font-size: clamp(.8rem, 4vw, 1.2rem);
-
+    font-size: clamp(.8rem, 4vw, 1.2rem); /* Responsive font size */
     margin: 0 auto .1rem;
-    /* display: block; */
     color: #333333;
 }
 
-
+/* Input fields styling */
 input[type="text"],
 input[type="email"] {
     font-size: clamp(.8rem, 4vw, 1.2rem);
-    height: clamp(2vmax, 5vmax, 2.5vmax);
-
+    height: clamp(2vmax, 5vmax, 2.5vmax); /* Responsive height */
 }
 
-
+/* Shared styling for text inputs and textarea */
 input[type="text"],
 input[type="email"],
 textarea {
-
     width: 100%;
-    padding: 0 auto ;
-
+    padding: 0 auto;
     margin: 0 auto 1rem;
     border: 1px solid #cccccc;
     border-radius: 4px;
 }
 
+/* Textarea styling */
 textarea {
     font-size: clamp(.8rem, 4vw, 1.2rem);
 }
 
+/* Submit button styling */
 input[type="submit"] {
-    background-color: #4CAF50;
+    background-color: #4CAF50; /* Green background */
     color: white;
     padding: 10px 2vmax;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    margin: 0 auto 1rem;
-
+    margin: 0 auto;
     font-size: clamp(.8rem, 4vw, 1.2rem);
-
-
 }
 
+/* Hover effect for submit button */
 input[type="submit"]:hover {
     background-color: #45a049;
 }
 
-
+/* 'See more' section styling */
 #see-more {
-
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* Styling for headings within 'See more' */
 #see-more > h4 {
     width: 100%;
     margin: 0 1rem;
 }
 
+/* 'Hide panel' button styling */
 #hide-panel {
-    padding: 1rem 2rem ;
+    padding: 1rem 2rem;
     margin: 0 auto .3rem;
-
     border-radius: 5px;
-    border: 1px solid #000;
-    background-color: #000;
+    border: none;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background-color: #311104; /* Dark background */
     color: #fff;
-
     cursor: pointer;
 }
 
+/* Active and hover state for 'Hide panel' and active elements */
 .active:active, #hide-panel:hover {
     background-color: #303030;
-    
 }
 
+/* Hidden panel styling */
 .panel {
-    display: none;
-    color: gray;
-    padding: 0 auto 5vmin;
-    margin: 2rem auto 0;
+    display: none; /* Initially hidden */
+    color: rgb(226, 226, 226);
+    padding: 0 auto;
+    margin: 1.35rem 10px;
     text-align: justify;
-
-    font-size: clamp(.8rem, 4vw, 1.2rem);
-
+    font-size: clamp(.5rem, 4vw, .8rem); /* Responsive font size */
 }
 
+/* Link styling within panels */
+.panel a {
+    color: #fff;
+    text-decoration: underline;
+}
 
-
+/* Transition effect for form elements and 'Hide panel' button */
 form, label, input[type="text"],
 input[type="email"],
 textarea,
 input[type="submit"], 
 #hide-panel{
     transition: all .3s ease-in-out;
+}
+
+
+.typewrite {
+    font-size: clamp(.7rem, 10vw, 1.3rem); /* Responsive font size */
+    color: #070303;
+    margin-top: 3vmin;
+    height: 2rem;
+}
+
+.wrap {
+    border-right: 3px solid ;
+    animation: blink-caret .56s infinite;
+}
+
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
 }
